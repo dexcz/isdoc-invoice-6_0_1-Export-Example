@@ -459,7 +459,7 @@ public partial class Invoice
     }
 
     /// <remarks/>
-    
+
     public AccountingSupplierPartyType AccountingSupplierParty
     {
         get
@@ -651,7 +651,8 @@ public partial class Invoice
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    /// 
+    //[System.Xml.Serialization.XmlIgnoreAttribute()]            
     public PaymentMeansType PaymentMeans
     {
         get
@@ -988,59 +989,202 @@ public partial class AlternateBankAccountType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://isdoc.cz/namespace/2013")]
+[System.Xml.Serialization.XmlTypeAttribute()]
 public partial class DetailsType
 {
 
-    private object[] itemsField;
+    //private object[] itemsField;
 
-    private ItemsChoiceType1[] itemsElementNameField;
+    //private ItemsChoiceType1[] itemsElementNameField;
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("BIC", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("BankCode", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("ConstantSymbol", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("DocumentID", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("IBAN", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("ID", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("IssueDate", typeof(System.DateTime), DataType = "date")]
-    [System.Xml.Serialization.XmlElementAttribute("Name", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("PaymentDueDate", typeof(System.DateTime), DataType = "date")]
-    [System.Xml.Serialization.XmlElementAttribute("SpecificSymbol", typeof(string))]
-    [System.Xml.Serialization.XmlElementAttribute("VariableSymbol", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("BIC", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("BankCode", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("ConstantSymbol", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("DocumentID", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("IBAN", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("ID", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("IssueDate", typeof(System.DateTime), DataType = "date")]
+    //[System.Xml.Serialization.XmlElementAttribute("Name", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("PaymentDueDate", typeof(System.DateTime), DataType = "date")]
+    //[System.Xml.Serialization.XmlElementAttribute("SpecificSymbol", typeof(string))]
+    //[System.Xml.Serialization.XmlElementAttribute("VariableSymbol", typeof(string))]
+
+    private string bic;
+    private string bankcode;
+    private string constantSymbol;
+    private string documentID;
+    private string iban;
+    private string id;
+    private System.DateTime issueDate;
+    private string name;
+    private System.DateTime paymentDueDate;
+    private string specificSymbol;
+    private string variableSymbol;
+
+    public string BIC
+    {
+        get
+        {
+            return this.bic;
+        }
+        set
+        {
+            this.bic = value;
+        }
+    }
+
+    public string BankCode
+    {
+        get
+        {
+            return this.bankcode;
+        }
+        set
+        {
+            this.bankcode = value;
+        }
+    }
+
+    public string ConstantSymbol
+    {
+        get
+        {
+            return this.constantSymbol;
+        }
+        set
+        {
+            this.constantSymbol = value;
+        }
+    }
+    public string DocumentID
+    {
+        get
+        {
+            return this.documentID;
+        }
+        set
+        {
+            this.documentID = value;
+        }
+    }
+    public string IBAN
+    {
+        get
+        {
+            return this.iban;
+        }
+        set
+        {
+            this.iban = value;
+        }
+    }
+    public string ID
+    {
+        get
+        {
+            return this.id;
+        }
+        set
+        {
+            this.id = value;
+        }
+    }
+
+    public System.DateTime IssueDate
+    {
+        get
+        {
+            return this.issueDate;
+        }
+        set
+        {
+            this.issueDate = value;
+        }
+    }
+
+    public string Name
+    {
+        get
+        {
+            return this.name;
+        }
+        set
+        {
+            this.name = value;
+        }
+    }
+
+    public System.DateTime PaymentDueDate
+    {
+        get
+        {
+            return this.paymentDueDate;
+        }
+        set
+        {
+            this.paymentDueDate = value;
+        }
+    }
+
+
+    public string SpecificSymbol
+    {
+        get
+        {
+            return this.specificSymbol;
+        }
+        set
+        {
+            this.specificSymbol = value;
+        }
+    }
+    public string VariableSymbol
+    {
+        get
+        {
+            return this.variableSymbol;
+        }
+        set
+        {
+            this.variableSymbol = value;
+        }
+    }
+
+
     //[System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-    public object[] Items
-    {
-        get
-        {
-            return this.itemsField;
-        }
-        set
-        {
-            this.itemsField = value;
-        }
-    }
+    //public object[] Items
+    //{
+    //    get
+    //    {
+    //        return this.itemsField;
+    //    }
+    //    set
+    //    {
+    //        this.itemsField = value;
+    //    }
+    //}
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public ItemsChoiceType1[] ItemsElementName
-    {
-        get
-        {
-            return this.itemsElementNameField;
-        }
-        set
-        {
-            this.itemsElementNameField = value;
-        }
-    }
+    ///// <remarks/>
+    //[System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+    //[System.Xml.Serialization.XmlIgnoreAttribute()]
+    //public ItemsChoiceType1[] ItemsElementName
+    //{
+    //    get
+    //    {
+    //        return this.itemsElementNameField;
+    //    }
+    //    set
+    //    {
+    //        this.itemsElementNameField = value;
+    //    }
+    //}
 }
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://isdoc.cz/namespace/2013", IncludeInSchema = false)]
+[System.Xml.Serialization.XmlTypeAttribute()]
 public enum ItemsChoiceType1
 {
 
@@ -1083,7 +1227,7 @@ public enum ItemsChoiceType1
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://isdoc.cz/namespace/2013")]
+[System.Xml.Serialization.XmlTypeAttribute()]
 public partial class PaymentType
 {
 
@@ -1210,8 +1354,7 @@ public enum PaymentMeansCodeType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://isdoc.cz/namespace/2013")]
-
+[System.Xml.Serialization.XmlTypeAttribute()]
 public partial class PaymentMeansType
 {
 
@@ -1234,7 +1377,7 @@ public partial class PaymentMeansType
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("AlternateBankAccount", IsNullable = false)]
+    [System.Xml.Serialization.XmlArrayItemAttribute("AlternateBankAccount", IsNullable = true)]
     public AlternateBankAccountType[] AlternateBankAccounts
     {
         get
@@ -4061,7 +4204,7 @@ public partial class PartyTaxSchemeType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://isdoc.cz/namespace/2013")]
+[System.Xml.Serialization.XmlTypeAttribute()]
 public partial class RegisterIdentificationType
 {
 
@@ -4106,7 +4249,7 @@ public partial class RegisterIdentificationType
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://isdoc.cz/namespace/2013", IncludeInSchema = false)]
+[System.Xml.Serialization.XmlTypeAttribute()]
 public enum ItemsChoiceType
 {
 

@@ -44,59 +44,18 @@ namespace isdoc_invoice_Export
                 invoce.AccountingSupplierParty.Party.Contact = new ContactType { ElectronicMail = "", Name = "", Telephone = "" };
                 invoce.AccountingSupplierParty.Party.RegisterIdentification = new RegisterIdentificationType();
 
-                //invoce.AccountingSupplierParty.Party.PartyTaxScheme = new List<PartyTaxSchemeType>();
-                //invoce.AccountingSupplierParty.Party.PartyTaxScheme.Add(new PartyTaxSchemeType { CompanyID = "CZ01923111", TaxScheme = "" });
-                //invoce.AccountingSupplierParty.Party.Contact = new ContactType { ElectronicMail = "", Name = "", Telephone = "" };
-                //invoce.AccountingSupplierParty.Party.RegisterIdentification = new RegisterIdentificationType();
-
-
-
-                //var data = new AccountingSupplierPartyType();
-                //data.Party = new PartyType();
-                //data.Party.PartyIdentification = new PartyIdentificationType { UserID = "01923111" };
-                //data.Party.PartyName = new PartyNameType { Name = "Torelia Media s.r.o." };
-                //data.Party.PostalAddress = new PostalAddressType { StreetName = "Březnice", BuildingNumber = "588", CityName = "Zlín", PostalZone = "760 01", Country = new CountryType { IdentificationCode = "CZ", Name = "Česká republika" } };
-                //data.Party.PartyTaxScheme = new List<PartyTaxSchemeType>();
-                //data.Party.PartyTaxScheme.Add(new PartyTaxSchemeType { CompanyID = "CZ01923111", TaxScheme = "" });                            
-                //data.Party.Contact = new ContactType { ElectronicMail = "", Name = "", Telephone = "" };
-                //invoce.AccountingSupplierParty = data;
 
                 var data2 = new AccountingCustomerPartyType();
                 data2.Party = new PartyType();
                 data2.Party.PartyIdentification = new PartyIdentificationType { UserID = "" };
                 data2.Party.PartyName = new PartyNameType { Name = "Name" };
                 data2.Party.PostalAddress = new PostalAddressType { StreetName = "Street", BuildingNumber = "", CityName = "City", PostalZone = "1231313", Country = new CountryType { IdentificationCode = "CZ", Name = "Česká republika" } };
-                data2.Party.PartyTaxScheme = new PartyTaxSchemeType[] { new PartyTaxSchemeType { CompanyID = "", TaxScheme = "" } };
-                //data2.Party.PartyTaxScheme = new List<PartyTaxSchemeType>();
-                //data2.Party.PartyTaxScheme.Add(new PartyTaxSchemeType { CompanyID = "", TaxScheme = "" });
+                data2.Party.PartyTaxScheme = new PartyTaxSchemeType[] { new PartyTaxSchemeType { CompanyID = "", TaxScheme = "" } };                
 
                 data2.Party.Contact = new ContactType { ElectronicMail = "our@mail.com", Name = "Name", Telephone = "Tel" };
 
 
                 invoce.Items = new object[] { data2 };
-
-
-                //invoce.InvoiceLines = new List<InvoiceLineType>();
-
-
-
-                //invoce.TaxTotal = new TaxTotalType();
-                //invoce.TaxTotal.TaxSubTotal = new List<TaxSubTotalType>();
-                //TaxSubTotalType vTaxSub = new TaxSubTotalType();
-                //vTaxSub.TaxableAmount = eData.price == null ? 0 : (Convert.ToDecimal(eData.price) - (Convert.ToDecimal(eData.price) * (decimal)0.15));
-                //vTaxSub.TaxAmount = eData.price == null ? 0 : (Convert.ToDecimal(eData.price) * (decimal)0.15);
-                //vTaxSub.TaxInclusiveAmount = eData.price == null ? 0 : (Convert.ToDecimal(eData.price));
-                //vTaxSub.AlreadyClaimedTaxableAmount = 0;
-                //vTaxSub.AlreadyClaimedTaxAmount = 0;
-                //vTaxSub.AlreadyClaimedTaxInclusiveAmount = 0;
-                //vTaxSub.DifferenceTaxableAmount = eData.price == null ? 0 : (Convert.ToDecimal(eData.price) - (Convert.ToDecimal(eData.price) * (decimal)0.15));
-                //vTaxSub.DifferenceTaxAmount = eData.price == null ? 0 : (Convert.ToDecimal(eData.price) * (decimal)0.15);
-                //vTaxSub.DifferenceTaxInclusiveAmount = eData.price == null ? 0 : (Convert.ToDecimal(eData.price));
-                //vTaxSub.TaxCategory = new TaxCategoryType() { Percent = 15, TaxScheme = "0", VATApplicable = true, LocalReverseChargeFlag = false };
-
-                //invoce.TaxTotal.TaxSubTotal.Add(vTaxSub);
-
-
 
                 invoce.TaxTotal = new TaxTotalType
                 {
@@ -129,33 +88,21 @@ namespace isdoc_invoice_Export
 
 
                 invoce.PaymentMeans = new PaymentMeansType();
-                //invoce.PaymentMeans.Payment = new List<PaymentType>();
-                //PaymentType pType = new PaymentType();
-                //pType.PaidAmount = eData.price == null ? 0 : (Convert.ToDecimal(eData.price));
-                //pType.PaymentMeansCode = PaymentMeansCodeType.Item42;
-                //pType.Details = new DetailsType();
-                //pType.Details.Items = new List<object>();
-                //pType.Details.Items.Add(new { PaymentDueDate = eData.datumImport, ID = eData.Id, BankCode = "0300", Name = "Banka", IBAN = "", BIC = "", VariableSymbol = "", ConstantSymbol = "", SpecificSymbol = "" });
-
-
-                //invoce.PaymentMeans.Payment.Add(pType);
-
 
                 invoce.PaymentMeans = new PaymentMeansType
                 {
                     Payment = new PaymentType[] { new PaymentType { PaidAmount = 0,
-                                PaymentMeansCode = PaymentMeansCodeType.Item42,  Details = new DetailsType{ Items = new object [] { new { PaymentDueDate  = DateTime.Now, ID = 0, BankCode  = "0100", Name = "Banka",
-                                 IBAN = "", BIC = "", VariableSymbol = "", ConstantSymbol = "", SpecificSymbol = ""} }, }
-                }
-                                }
+                                            PaymentMeansCode = PaymentMeansCodeType.Item42,  Details = new DetailsType{ PaymentDueDate  = DateTime.Now, ID = "0", BankCode  = "0100", Name = "Banka",
+                                             IBAN = "", BIC = "",  VariableSymbol = "", ConstantSymbol = "", SpecificSymbol = "", IssueDate = DateTime.Now, DocumentID = ""}  }
+                            }
+
                 };
 
                 invoices.Add(invoce);
 
 
                 if (invoices.Count > 0)
-                {
-                    //XmlSerializer serializer = new XmlSerializer(invoices.GetType());
+                {   
                     var r = Serialize(invoices);
 
                     if (r.Contains("<?xml version=\"1.0\" encoding=\"utf-16\"?>"))
